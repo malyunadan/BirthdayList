@@ -4,10 +4,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 // RetrofitInstance: En "Singleton" (objekt), der opretter forbindelsen til internettet.
-// Vi bruger et objekt, så vi kun opretter forbindelsen én gang, hvilket sparer på telefonens ressourcer.
+// Jeg bruger et objekt, så jeg kun opretter forbindelsen én gang, hvilket sparer på telefonens ressourcer.
 object RetrofitInstance {
 
-    // Base URL: Start-adressen på lærerens API. 
+    // Base URL: Start-adressen på Anders's API.
     // Alle vores kald (som /Persons) bliver lagt oven på denne adresse.
     private const val BASE_URL = "https://birthdaysrest.azurewebsites.net/api/"
 

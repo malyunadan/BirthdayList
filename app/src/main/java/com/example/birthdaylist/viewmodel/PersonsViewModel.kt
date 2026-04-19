@@ -48,20 +48,20 @@ class PersonsViewModel(
             _isLoading.value = true
             _errorMessage.value = null
 
-            // 1. Vi prøver først at lade API'et (Backend) klare filtreringen
+            // 1. her prøver jeg først at lade API'et (Backend) klare filtreringen
             val response = repository.getPersons(userId, name, age, sortBy, sortOrder)
 
             if (response.isSuccessful) {
                 var list = response.body() ?: emptyList()
 
                 // 2. KOTLIN FILTRERING (Frontend)
-                // Hvis serveren sender for mange resultater (fx "Hans" når vi søger på "Jane"),
-                // så filtrerer vi listen manuelt her for at sikre et korrekt resultat.
+                // Hvis serveren sender for mange resultater (fx "Hans" når man søger på "Jane"),
+                // så kan man filtrerer listen manuelt her for at sikre et korrekt resultat.
                 if (!name.isNullOrBlank()) {
                     list = list.filter { it.name.contains(name, ignoreCase = true) }
                 }
                 
-                // Vi sikrer os også at alder-filteret virker ved at filtrere manuelt
+                // til at sikrer os også at alder-filteret virker ved at filtrere manuelt
                 if (age != null) {
                     list = list.filter { it.age == age }
                 }

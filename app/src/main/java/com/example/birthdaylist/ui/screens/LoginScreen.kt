@@ -29,10 +29,10 @@ fun LoginScreen(
     navController: NavController,
     authViewModel: AuthViewModel = koinViewModel() // Henter AuthViewModel automatisk via Koin
 ) {
-    // Vi overvåger (observerer) fejlbeskeder fra Firebase gennem vores ViewModel
+    // den overvåger (observerer) fejlbeskeder fra Firebase gennem vores ViewModel
     val errorMessage by authViewModel.errorMessage.collectAsState()
     
-    // Vi kalder LoginContent og fortæller den hvad der skal ske når man klikker
+    // så kaldes LoginContent og fortæller den hvad der skal ske når man klikker
     LoginContent(
         navController = navController,
         errorMessage = errorMessage,
@@ -90,7 +90,7 @@ fun LoginContent(
         // --- EMAIL INPUT ---
         OutlinedTextField(
             value = email,
-            onValueChange = { email = it }, // Opdaterer variablen når man taster
+            onValueChange = { email = it }, // Opdaterer efter hver bogstav når man taster
             label = { Text("Email") },
             modifier = Modifier.fillMaxWidth().testTag("email_field"),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email), // Viser @ på tastaturet
@@ -122,7 +122,7 @@ fun LoginContent(
         }
 
         // --- FEJLMEDDELELSE ---
-        // Hvis errorMessage ikke er null (der er sket en fejl), viser vi den i rød
+        // Hvis errorMessage ikke er null (der er sket en fejl), viser den i rød
         if (errorMessage != null) {
             Spacer(modifier = Modifier.height(16.dp))
             Text(

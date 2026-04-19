@@ -28,25 +28,25 @@ fun EditPersonScreen(
     viewModel: PersonsViewModel = koinViewModel()
 ) {
     // --- LOKAL UI STATE (HOLDER PÅ INDTASTNINGERNE) ---
-    // Vi bruger 'remember', så Compose husker teksten i felterne undervejs.
+    // jeg bruger 'remember', så Compose husker teksten i felterne undervejs.
     var name by remember { mutableStateOf("") }
     var birthDay by remember { mutableStateOf("") }
     var birthMonth by remember { mutableStateOf("") }
     var birthYear by remember { mutableStateOf("") }
     var remarks by remember { mutableStateOf("") }
-    var userId by remember { mutableStateOf("") } // Vi skal gemme userId så det ikke går tabt ved opdatering
+    var userId by remember { mutableStateOf("") } // jeg skal gemme userId så det ikke går tabt ved opdatering
 
     // To forskellige loading-tilstande:
-    // 1. Når vi henter den eksisterende data fra API'et
+    // 1. Når den henter den eksisterende data fra API'et
     var isLoadingData by remember { mutableStateOf(true) }
-    // 2. Når vi gemmer de nye ændringer tilbage til API'et
+    // 2. Når den gemmer de nye ændringer tilbage til API'et
     val isLoadingSave by viewModel.isLoading.collectAsState()
 
     // --- HENT DATA NÅR SKÆRMEN STARTER ---
     // 'LaunchedEffect' kører én gang når skærmen åbner.
     LaunchedEffect(personId) {
         viewModel.loadPersonById(personId) { person ->
-            // Hvis vi finder personen, udfylder vi felterne med den nuværende data
+            // Hvis den finder personen, udfylder den felterne med den nuværende data
             person?.let {
                 name = it.name
                 birthDay = it.birthDayOfMonth.toString()
@@ -73,7 +73,7 @@ fun EditPersonScreen(
             )
         }
     ) { padding ->
-        // Hvis vi stadig henter data fra API'et, vis en spinner i midten
+        // Hvis den stadig henter data fra API'et, vis en spinner i midten
         if (isLoadingData) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 CircularProgressIndicator()

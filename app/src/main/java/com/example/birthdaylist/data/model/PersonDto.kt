@@ -16,11 +16,11 @@ data class PersonDto(
     // Det er serveren, der tildeler ID'et og sender det tilbage til os.
     val id: Int? = null,
 
-    // ID på den bruger (dig), som denne person "tilhører".
-    // I denne app bruger vi dit Firebase UserID. Det sikrer, at du kun ser dine egne venners fødselsdage.
+    // ID på den bruger (mig), som denne person "tilhører".
+    // I denne app bruger Firebase UserID. Det sikrer, at man kun ser sine egne venners fødselsdage.
     val userId: String,
 
-    // Navnet på din ven. Påkrævet felt.
+    // Navnet på ven. Påkrævet felt.
     val name: String,
 
     // Fødselsår (f.eks. 1995).
@@ -51,7 +51,7 @@ data class PersonDto(
         get() {
             val today = LocalDate.now()
             
-            // Vi opretter en dato for fødselsdagen i DETTE år.
+            // jeg opretter en dato for fødselsdagen i DETTE år.
             var nextBirthday = LocalDate.of(
                 today.year,
                 birthMonth,
