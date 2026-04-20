@@ -1,4 +1,4 @@
-package com.example.birthdaylist.ui.screens
+package com.example.birthdaylist.ui.view
 
 import android.os.Build
 import androidx.annotation.RequiresApi

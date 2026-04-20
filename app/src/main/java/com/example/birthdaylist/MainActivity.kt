@@ -7,7 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import com.example.birthdaylist.ui.theme.BirthdayListTheme
-import com.example.birthdaylist.ui.screens.BirthdayApp
+import com.example.birthdaylist.ui.view.BirthdayApp
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)

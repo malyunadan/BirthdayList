@@ -1,4 +1,4 @@
-package com.example.birthdaylist.ui.screens
+package com.example.birthdaylist.ui.view
 
 // Her henter vi de nødvendige biblioteker til UI, Navigation og Dependency Injection (Koin)
 import androidx.compose.foundation.layout.*

@@ -1,4 +1,4 @@
-package com.example.birthdaylist.ui.screens
+package com.example.birthdaylist.ui.view
 
 import android.util.Log
 import androidx.compose.foundation.layout.*
