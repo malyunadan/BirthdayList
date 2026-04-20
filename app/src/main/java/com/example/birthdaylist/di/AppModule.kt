@@ -13,6 +13,7 @@ import org.koin.dsl.module
 // Koin-modul: Dette er appens "opskriftsbog". 
 // Den fortæller appen hvordan den skal oprette alle de vigtige dele, så vi ikke skal gøre det manuelt hver gang.
 val appModule = module {
+    //val deklarere variabler som kun er synlige i denne module.
 
     // 'Single' betyder at der kun findes ÉN instans af dette i hele appen (Singleton).
     // Vi opretter FirebaseAuth én gang, så alle skærme bruger den samme logind-tjeneste.
