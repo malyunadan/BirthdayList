@@ -54,6 +54,11 @@ class PersonsViewModel(
             if (response.isSuccessful) {
                 var list = response.body() ?: emptyList()
 
+                // - SKAL KUN SER MINE EGNE VENNER ---
+                // jeg filtrerer listen så det kun viser uid
+                // personer, der tilhører den loggede bruger (userId).
+                list = list.filter { it.userId == userId }
+
                 // 2. KOTLIN FILTRERING (Frontend)
                 // Hvis serveren sender for mange resultater (fx "Hans" når man søger på "Jane"),
                 // så kan man filtrerer listen manuelt her for at sikre et korrekt resultat.

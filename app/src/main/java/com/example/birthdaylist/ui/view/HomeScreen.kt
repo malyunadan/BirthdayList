@@ -136,7 +136,7 @@ fun HomeScreen(
                 .weight(1f)
                 .testTag("pull_to_refresh")
         ) {
-            // Update kunne ikke lige nå at få den til at virke
+            // Kunne ikke lige nå at få pull to refresh box til at virke
             // Jeg bruger en LazyColumn til ALT indholdet, så hele arealet altid er scrollbart.
             // Dette sikrer at Pull-to-refresh virker hver gang.
             LazyColumn(modifier = Modifier.fillMaxSize()) {
